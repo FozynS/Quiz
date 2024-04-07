@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
+import Quiz from './quiz/quiz';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [questions, setQuestions] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('/questions.json');
+        setQuestions(response.data);
+      } catch (error) {
+        console.error('Ошибка при получении данных:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {questions && questions.length > 0 && <Quiz questions={questions} />}
     </div>
   );
 }
