@@ -46,7 +46,7 @@ function Quiz({ questions }) {
           <input 
             key={index}
             type="checkbox" 
-            className={`checkbox ${selectedAnswers[index] !== null ? (questions[index].answers[selectedAnswers[index]].isCorrect ? 'correct' : 'wrong') : ''}`}
+            className={`checkbox ${selectedAnswers[index] !== null ? (questions[index].answers[selectedAnswers[index]].isCorrect ? 'correct-checkbox' : 'wrong-checkbox') : ''}`}
             checked={selectedAnswers[index] !== null} 
             readOnly
           />

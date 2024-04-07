@@ -1,6 +1,6 @@
 import axios from 'axios';
 import './App.css';
-import Quiz from './quiz/quiz';
+import Quiz from './quiz-component/quiz';
 import { useEffect, useState } from 'react';
 
 function App() {

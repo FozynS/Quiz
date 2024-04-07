@@ -71,11 +71,10 @@ hr {
 }
 
  /** for correct answer */
-.correct:checked {
+.correct-checkbox:checked {
   background-color: #388124;
 }
- /** for correct answer */
-.correct:checked::before {
+.correct-checkbox:checked::before {
   content: '\2713';
   position: absolute;
   top: 50%; 
@@ -87,11 +86,11 @@ hr {
 
 
  /** for wrong answer */
-.wrong:checked {
+.wrong-checkbox:checked {
   background-color: rgb(237, 129, 129);
 }
  /** for wrong answer */
-.wrong:checked::before {
+.wrong-checkbox:checked::before {
   content: '✕';
   position: absolute;
   top: 50%;
